@@ -1,0 +1,8 @@
+project: savantenvs/freertos
+target: tcp
+cmds:
+  - cmd: /mayhem/tcp
+    libfuzzer: true
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/tcp/testsuite

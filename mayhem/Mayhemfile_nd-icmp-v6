@@ -1,0 +1,8 @@
+project: savantenvs/freertos
+target: nd-icmp-v6
+cmds:
+  - cmd: /mayhem/nd-icmp-v6
+    libfuzzer: true
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/nd-icmp-v6/testsuite

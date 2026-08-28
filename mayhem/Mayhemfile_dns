@@ -1,0 +1,8 @@
+project: savantenvs/freertos
+target: dns
+cmds:
+  - cmd: /mayhem/dns
+    libfuzzer: true
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/dns/testsuite

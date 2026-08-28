@@ -1,0 +1,10 @@
+project: savantenvs/freertos
+target: full-stack
+cmds:
+  # full-stack drives the whole FreeRTOS-Plus-TCP IP task via the scheduler, which exit()s when the
+  # task returns — so it cannot iterate in-process as libFuzzer. It runs as a file-input target over
+  # the run-once standalone reproducer (coverage-instrumented; same LLVMFuzzerTestOneInput code path).
+  - cmd: /mayhem/full-stack-standalone @@
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/full-stack/testsuite

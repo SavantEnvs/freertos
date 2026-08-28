@@ -1,0 +1,8 @@
+project: savantenvs/freertos
+target: nd-check-resolution
+cmds:
+  - cmd: /mayhem/nd-check-resolution
+    libfuzzer: true
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/nd-check-resolution/testsuite

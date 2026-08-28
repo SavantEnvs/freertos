@@ -1,0 +1,8 @@
+project: savantenvs/freertos
+target: netbios
+cmds:
+  - cmd: /mayhem/netbios
+    libfuzzer: true
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/netbios/testsuite
